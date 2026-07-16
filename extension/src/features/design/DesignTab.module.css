@@ -1,0 +1,97 @@
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ss-space-2);
+}
+
+.summaryStats {
+  display: flex;
+  gap: var(--ss-space-3);
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: grid;
+}
+
+.statValue {
+  font-size: var(--ss-font-size-lg);
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: var(--ss-font-size-sm);
+  color: var(--ss-text-muted);
+}
+
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--ss-space-2);
+}
+
+.preset {
+  display: grid;
+  gap: 6px;
+  padding: var(--ss-space-2);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-lg);
+  background: var(--ss-surface);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color var(--ss-motion), background var(--ss-motion);
+}
+
+.preset:hover {
+  border-color: var(--ss-border-strong);
+}
+
+.preset[aria-pressed='true'] {
+  border-color: var(--ss-accent);
+  background: var(--ss-accent-soft);
+}
+
+.presetSwatches {
+  display: flex;
+  gap: 4px;
+}
+
+.presetSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.presetLabel {
+  font-weight: 600;
+  font-size: var(--ss-font-size);
+}
+
+.presetDescription {
+  font-size: 11px;
+  color: var(--ss-text-muted);
+  line-height: 1.35;
+}
+
+.globalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ss-space-2);
+  padding: var(--ss-space-1) 0;
+  flex-wrap: wrap;
+}
+
+.globalLabel {
+  font-size: var(--ss-font-size);
+  color: var(--ss-text);
+}
+
+.compareRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ss-space-2);
+}

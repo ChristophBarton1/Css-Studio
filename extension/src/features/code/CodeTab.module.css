@@ -1,0 +1,49 @@
+.modeRow {
+  display: flex;
+  gap: var(--ss-space-1);
+  margin-bottom: var(--ss-space-3);
+  align-items: center;
+}
+
+.modeChip {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--ss-border);
+  font-size: var(--ss-font-size-sm);
+  font-weight: 550;
+  background: var(--ss-surface);
+  color: var(--ss-text-muted);
+}
+
+.modeChipActive {
+  composes: modeChip;
+  border-color: var(--ss-accent);
+  color: var(--ss-accent-strong);
+  background: var(--ss-accent-soft);
+}
+
+.editorHost {
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.loading {
+  padding: var(--ss-space-4);
+  color: var(--ss-text-muted);
+  font-size: var(--ss-font-size-sm);
+}
+
+.actions {
+  display: flex;
+  gap: var(--ss-space-1);
+  margin-top: var(--ss-space-2);
+  flex-wrap: wrap;
+}
+
+.validation {
+  margin-top: var(--ss-space-1);
+  font-size: var(--ss-font-size-sm);
+  color: var(--ss-warning);
+}

@@ -1,0 +1,63 @@
+/*
+ * Style Studio design tokens — the single source for all UI values.
+ * Light theme first; a dark theme can later override these under
+ * `:root[data-theme='dark']` without touching components.
+ */
+:root {
+  color-scheme: light;
+
+  /* Palette */
+  --ss-bg: #fafafc;
+  --ss-surface: #ffffff;
+  --ss-surface-muted: #f3f3f8;
+  --ss-border: #e4e4ec;
+  --ss-border-strong: #cfcfdd;
+  --ss-text: #1b1b22;
+  --ss-text-muted: #62626e;
+  --ss-text-faint: #8e8e9c;
+
+  /* Single restrained blue accent */
+  --ss-accent: #2563eb;
+  --ss-accent-strong: #1d4ed8;
+  --ss-accent-soft: #e8f0fe;
+  --ss-accent-text: #ffffff;
+
+  /* Signals */
+  --ss-success: #067647;
+  --ss-warning: #b54708;
+  --ss-danger: #b42318;
+  --ss-danger-soft: #fef3f2;
+
+  /* Spacing — 8px grid, 4px for compact internal gaps */
+  --ss-space-1: 4px;
+  --ss-space-2: 8px;
+  --ss-space-3: 12px;
+  --ss-space-4: 16px;
+  --ss-space-5: 24px;
+  --ss-space-6: 32px;
+
+  /* Radii — ~8–10px controls */
+  --ss-radius-sm: 6px;
+  --ss-radius: 8px;
+  --ss-radius-lg: 10px;
+
+  /* Typography */
+  --ss-font:
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ss-font-mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+  --ss-font-size-sm: 12px;
+  --ss-font-size: 13.5px;
+  --ss-font-size-lg: 15px;
+
+  /* Borders instead of large shadows; one soft shadow for overlays */
+  --ss-shadow-overlay: 0 4px 20px rgba(20, 20, 43, 0.12), 0 0 0 1px rgba(20, 20, 43, 0.05);
+
+  /* Motion */
+  --ss-motion: 140ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ss-motion: 0ms linear;
+  }
+}

@@ -1,0 +1,28 @@
+.group {
+  display: inline-flex;
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+  background: var(--ss-surface-muted);
+  padding: 2px;
+  gap: 2px;
+}
+
+.option {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: var(--ss-radius-sm);
+  font-size: var(--ss-font-size-sm);
+  font-weight: 550;
+  color: var(--ss-text-muted);
+  cursor: pointer;
+  transition: background var(--ss-motion), color var(--ss-motion);
+  white-space: nowrap;
+}
+
+.option[aria-checked='true'] {
+  background: var(--ss-surface);
+  color: var(--ss-text);
+  box-shadow: 0 0 0 1px var(--ss-border);
+}

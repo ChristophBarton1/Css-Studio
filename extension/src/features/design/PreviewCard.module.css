@@ -1,0 +1,69 @@
+.frame {
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-lg);
+  overflow: hidden;
+}
+
+.frameLabel {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ss-text-faint);
+  background: var(--ss-surface-muted);
+  border-bottom: 1px solid var(--ss-border);
+}
+
+.page {
+  padding: var(--pv-pad, 16px);
+  display: grid;
+  gap: var(--pv-gap, 12px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBrand {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  margin-left: auto;
+}
+
+.heading {
+  margin: 0;
+}
+
+.paragraph {
+  margin: 0;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: var(--pv-btn-pad, 7px 14px);
+  border: 1px solid transparent;
+}
+
+.card {
+  display: grid;
+  gap: 4px;
+}

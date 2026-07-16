@@ -1,0 +1,62 @@
+.roleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-2);
+  padding: 8px var(--ss-space-1);
+  border-radius: var(--ss-radius);
+}
+
+.roleRow:hover {
+  background: var(--ss-surface-muted);
+}
+
+.roleLabel {
+  font-weight: 550;
+  flex: 1;
+}
+
+.count {
+  color: var(--ss-text-faint);
+  font-size: var(--ss-font-size-sm);
+}
+
+.selector {
+  font-family: var(--ss-font-mono);
+  font-size: 11px;
+  color: var(--ss-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 40%;
+}
+
+.selectedCard {
+  border: 1px solid var(--ss-accent);
+  border-radius: var(--ss-radius-lg);
+  padding: var(--ss-space-3);
+  display: grid;
+  gap: var(--ss-space-2);
+  background: var(--ss-surface);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ss-space-2);
+}
+
+.colorControl {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-1);
+}
+
+.colorControl input[type='color'] {
+  inline-size: 30px;
+  block-size: 26px;
+  padding: 1px;
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-sm);
+  background: var(--ss-surface);
+  cursor: pointer;
+}

@@ -1,0 +1,89 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-2);
+  padding: var(--ss-space-2) var(--ss-space-3);
+  background: var(--ss-surface);
+  border-bottom: 1px solid var(--ss-border);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: var(--ss-font-size);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logo {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #3b82f6, var(--ss-accent-strong));
+  flex-shrink: 0;
+}
+
+.hostname {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ss-text-muted);
+  font-size: var(--ss-font-size-sm);
+  text-align: center;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: var(--ss-space-2);
+  min-width: 220px;
+  background: var(--ss-surface);
+  border-radius: var(--ss-radius-lg);
+  box-shadow: var(--ss-shadow-overlay);
+  padding: var(--ss-space-1);
+  z-index: 30;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 7px 10px;
+  border: none;
+  background: none;
+  border-radius: var(--ss-radius-sm);
+  font-size: var(--ss-font-size);
+  cursor: pointer;
+}
+
+.menuItem:hover,
+.menuItem:focus-visible {
+  background: var(--ss-surface-muted);
+}
+
+.menuDivider {
+  height: 1px;
+  background: var(--ss-border);
+  margin: var(--ss-space-1) 0;
+}
+
+.menuGroupLabel {
+  padding: 6px 10px 2px;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ss-text-faint);
+}
+
+.planRow {
+  display: flex;
+  gap: var(--ss-space-1);
+  padding: 4px 10px 8px;
+}

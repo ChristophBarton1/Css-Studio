@@ -1,0 +1,53 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-2);
+  padding: 8px var(--ss-space-1);
+  border-radius: var(--ss-radius);
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.row:hover {
+  background: var(--ss-surface-muted);
+}
+
+.roleName {
+  font-weight: 650;
+  min-width: 44px;
+  text-transform: uppercase;
+  font-size: var(--ss-font-size-sm);
+}
+
+.meta {
+  color: var(--ss-text-muted);
+  font-size: var(--ss-font-size-sm);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.count {
+  color: var(--ss-text-faint);
+  font-size: var(--ss-font-size-sm);
+  white-space: nowrap;
+}
+
+.editor {
+  margin: var(--ss-space-1) 0 var(--ss-space-2);
+  padding: var(--ss-space-3);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-lg);
+  display: grid;
+  gap: var(--ss-space-2);
+  grid-template-columns: 1fr 1fr;
+}
+
+.full {
+  grid-column: 1 / -1;
+}

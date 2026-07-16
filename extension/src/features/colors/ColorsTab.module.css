@@ -1,0 +1,104 @@
+.roleGroup {
+  margin-bottom: var(--ss-space-3);
+}
+
+.roleLabel {
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ss-text-faint);
+  margin: 0 0 var(--ss-space-1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-2);
+  padding: 6px var(--ss-space-1);
+  border-radius: var(--ss-radius);
+}
+
+.row:hover {
+  background: var(--ss-surface-muted);
+}
+
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: 550;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.value {
+  font-family: var(--ss-font-mono);
+  font-size: var(--ss-font-size-sm);
+  color: var(--ss-text-muted);
+}
+
+.count {
+  font-size: var(--ss-font-size-sm);
+  color: var(--ss-text-faint);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.editor {
+  margin: var(--ss-space-1) 0 var(--ss-space-2);
+  padding: var(--ss-space-3);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-lg);
+  background: var(--ss-surface);
+  display: grid;
+  gap: var(--ss-space-2);
+}
+
+.editorControls {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-2);
+  flex-wrap: wrap;
+}
+
+.hexInput {
+  width: 110px;
+  font-family: var(--ss-font-mono);
+}
+
+.nativePicker {
+  inline-size: 34px;
+  block-size: 30px;
+  padding: 2px;
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+  background: var(--ss-surface);
+  cursor: pointer;
+}
+
+.confirm {
+  border: 1px solid var(--ss-accent-soft);
+  background: var(--ss-accent-soft);
+  border-radius: var(--ss-radius);
+  padding: var(--ss-space-2) var(--ss-space-3);
+  display: grid;
+  gap: var(--ss-space-2);
+}
+
+.proCard {
+  border: 1px dashed var(--ss-border-strong);
+  border-radius: var(--ss-radius-lg);
+  padding: var(--ss-space-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ss-space-2);
+}

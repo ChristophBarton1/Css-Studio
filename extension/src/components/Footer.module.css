@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-1);
+  padding: var(--ss-space-2) var(--ss-space-3);
+  background: var(--ss-surface);
+  border-top: 1px solid var(--ss-border);
+  flex-shrink: 0;
+}
+
+.spacer {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.notice {
+  font-size: var(--ss-font-size-sm);
+  color: var(--ss-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  text-align: right;
+  padding: 0 var(--ss-space-2);
+}

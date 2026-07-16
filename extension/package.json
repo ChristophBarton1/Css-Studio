@@ -1,0 +1,31 @@
+{
+  "name": "@style-studio/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "build:test": "wxt build --mode testing",
+    "zip": "wxt zip",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@codemirror/lang-css": "^6.3.0",
+    "@preact/signals": "^2.0.0",
+    "codemirror": "^6.0.1",
+    "preact": "^10.26.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.0",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/preact": "^3.2.4",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "wxt": "^0.20.0"
+  }
+}

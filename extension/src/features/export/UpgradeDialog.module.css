@@ -1,0 +1,58 @@
+.benefits {
+  margin: 0 0 var(--ss-space-3);
+  padding-left: 18px;
+  font-size: var(--ss-font-size);
+  line-height: 1.7;
+}
+
+.plans {
+  display: grid;
+  gap: var(--ss-space-2);
+  margin-bottom: var(--ss-space-3);
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ss-space-2);
+  padding: var(--ss-space-3);
+  border-radius: var(--ss-radius-lg);
+  cursor: pointer;
+  font-size: var(--ss-font-size);
+  text-align: left;
+  width: 100%;
+}
+
+.planAnnual {
+  composes: plan;
+  border: 2px solid var(--ss-accent);
+  background: var(--ss-accent-soft);
+}
+
+.planMonthly {
+  composes: plan;
+  border: 1px solid var(--ss-border);
+  background: var(--ss-surface);
+}
+
+.planName {
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: var(--ss-space-1);
+}
+
+.planTag {
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--ss-accent-strong);
+  background: var(--ss-surface);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+
+.planPrice {
+  font-weight: 600;
+  white-space: nowrap;
+}

@@ -1,0 +1,63 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border: 1px solid var(--ss-border);
+  border-radius: 999px;
+  font-size: var(--ss-font-size-sm);
+  font-weight: 550;
+  color: var(--ss-text-muted);
+  background: var(--ss-surface);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ss-text-faint);
+}
+
+.ready .dot {
+  background: var(--ss-text-faint);
+}
+
+.analyzing {
+  color: var(--ss-accent-strong);
+  border-color: var(--ss-accent-soft);
+  background: var(--ss-accent-soft);
+}
+
+.analyzing .dot {
+  background: var(--ss-accent);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+.offline {
+  color: var(--ss-warning);
+}
+
+.offline .dot {
+  background: var(--ss-warning);
+}
+
+.unsupported {
+  color: var(--ss-text-faint);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analyzing .dot {
+    animation: none;
+  }
+}
