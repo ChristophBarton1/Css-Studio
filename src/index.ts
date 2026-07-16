@@ -1,0 +1,8 @@
+import { serve } from "@hono/node-server";
+import { app } from "./app.js";
+
+const port = Number.parseInt(process.env.PORT ?? "8787", 10);
+
+serve({ fetch: app.fetch, port }, (info) => {
+  console.log(`Style Studio API listening on http://localhost:${info.port}`);
+});

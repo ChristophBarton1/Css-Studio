@@ -1,0 +1,176 @@
+openapi: 3.1.0
+info:
+  title: Style Studio API
+  version: 0.1.0
+  description: Backend contract for the Style Studio extension and Fable UI.
+servers:
+  - url: http://localhost:8787
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      responses:
+        "200":
+          description: Service is ready.
+  /v1/capabilities:
+    get:
+      operationId: getCapabilities
+      responses:
+        "200":
+          description: Values for export form controls.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [targets, frameworks, styling]
+                properties:
+                  targets:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ExportTarget"
+                  frameworks:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Framework"
+                  styling:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Styling"
+  /v1/entitlements/{plan}:
+    get:
+      operationId: getEntitlements
+      parameters:
+        - name: plan
+          in: path
+          required: true
+          schema:
+            $ref: "#/components/schemas/Plan"
+      responses:
+        "200":
+          description: Feature gates for the requested plan.
+        "400":
+          description: Unknown plan.
+  /v1/exports/preview:
+    post:
+      operationId: previewExport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExportRequest"
+      responses:
+        "200":
+          description: Generated platform-specific Agent Pack.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AgentPack"
+        "400":
+          description: Invalid input.
+        "402":
+          description: The selected target requires Pro.
+components:
+  schemas:
+    Plan:
+      type: string
+      enum: [free, pro, team]
+    ExportTarget:
+      type: string
+      enum: [universal, codex, claude-code, lovable, cursor, windsurf]
+    Framework:
+      type: string
+      enum: [html, react, nextjs, vue, svelte]
+    Styling:
+      type: string
+      enum: [css, scss, tailwind]
+    ExportMode:
+      type: string
+      enum:
+        - restyle-existing
+        - generate-new
+        - tokens-only
+        - selected-component
+        - fix-inconsistencies
+    ColorToken:
+      type: object
+      required: [name, value, role]
+      properties:
+        name: { type: string }
+        value: { type: string }
+        role: { type: string }
+    TypographyToken:
+      type: object
+      required: [role, fontFamily, fontSize, fontWeight, lineHeight]
+      properties:
+        role: { type: string }
+        fontFamily: { type: string }
+        fontSize: { type: string }
+        fontWeight: { type: integer, minimum: 1, maximum: 1000 }
+        lineHeight: { type: string }
+    DesignSnapshot:
+      type: object
+      required:
+        - id
+        - name
+        - sourceUrl
+        - capturedAt
+        - colors
+        - typography
+        - generatedCss
+      properties:
+        id: { type: string }
+        name: { type: string }
+        sourceUrl: { type: string, format: uri }
+        capturedAt: { type: string, format: date-time }
+        colors:
+          type: array
+          items:
+            $ref: "#/components/schemas/ColorToken"
+        typography:
+          type: array
+          items:
+            $ref: "#/components/schemas/TypographyToken"
+        spacing:
+          type: object
+          additionalProperties: { type: string }
+        radii:
+          type: object
+          additionalProperties: { type: string }
+        shadows:
+          type: object
+          additionalProperties: { type: string }
+        generatedCss: { type: string }
+        changedSelectors:
+          type: array
+          items: { type: string }
+    ExportRequest:
+      type: object
+      required: [plan, target, framework, styling, mode, snapshot]
+      properties:
+        plan:
+          $ref: "#/components/schemas/Plan"
+        target:
+          $ref: "#/components/schemas/ExportTarget"
+        framework:
+          $ref: "#/components/schemas/Framework"
+        styling:
+          $ref: "#/components/schemas/Styling"
+        mode:
+          $ref: "#/components/schemas/ExportMode"
+        snapshot:
+          $ref: "#/components/schemas/DesignSnapshot"
+        instructions: { type: string }
+        includeReferenceImage: { type: boolean, default: false }
+    AgentPack:
+      type: object
+      required: [target, files]
+      properties:
+        target:
+          $ref: "#/components/schemas/ExportTarget"
+        files:
+          type: object
+          additionalProperties: { type: string }
+        handoffUrl:
+          type: string
+          format: uri
