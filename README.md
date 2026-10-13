@@ -22,7 +22,7 @@ Style Studio is a Chrome extension concept for designers and developers who buil
 
 This repository contains the **backend and the typed core contracts**: a Hono API that validates design snapshots, enforces Free / Pro / Team plan gating, and generates the agent-specific export files. The extension UI is built separately against this API, following the spec in [`docs/frontend-spec.md`](./docs/frontend-spec.md).
 
-## ✨ Features
+## Features
 
 - **Typed design-snapshot contract**: Zod schemas for color and typography tokens, spacing, radii, shadows, generated CSS and changed selectors, with sensible size limits.
 - **Agent Pack generation**: every export produces `IMPLEMENTATION.md`, `design-tokens.json`, `styles.css` and `changes.json`, plus a target-specific rules file:
@@ -37,7 +37,7 @@ This repository contains the **backend and the typed core contracts**: a Hono AP
 - **Privacy boundary by design**: contracts accept visual tokens, generated CSS and selectors only, never cookies, form values, browsing history or the full DOM.
 - **Tested**: Vitest suites for the API, plan gating and export generation; OpenAPI spec in `docs/openapi.yaml`.
 
-## 🧱 Tech stack
+## Tech stack
 
 | Area | Technology |
 | --- | --- |
@@ -49,7 +49,7 @@ This repository contains the **backend and the typed core contracts**: a Hono AP
 | API docs | OpenAPI 3 (`docs/openapi.yaml`) |
 | Planned extension UI | WXT, Preact, Preact Signals, CSS Modules, CodeMirror 6 |
 
-## 🏗️ How it works
+## How it works
 
 ```mermaid
 sequenceDiagram
@@ -84,7 +84,7 @@ Paid adapter requested on a free plan:
 }
 ```
 
-## 🚀 Getting started
+## Getting started
 
 **Prerequisites:** Node.js 20+ and npm.
 
@@ -100,7 +100,7 @@ Copy `.env.example` to `.env`. Only `PORT` is used by the current milestone; the
 
 `PORT`, `APP_ORIGIN`, `DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `BILLING_WEBHOOK_SECRET`, `R2_BUCKET`
 
-## 📁 Project structure
+## Project structure
 
 ```
 .
@@ -118,7 +118,7 @@ Copy `.env.example` to `.env`. Only `PORT` is used by the current milestone; the
 └── CLAUDE.md                        # instructions for frontend agents
 ```
 
-## 🗺️ Roadmap
+## Roadmap
 
 Current milestone (done): entitlement definitions, typed snapshot and export contracts, Universal / Codex / Claude Code / Cursor / Windsurf / Lovable adapters, Lovable Build-with-URL handoff, Hono API with validation and upgrade responses, unit tests.
 
